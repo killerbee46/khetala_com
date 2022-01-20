@@ -83,7 +83,7 @@ const Navbar = (props) => {
 
   return (
     <div>
-      <AppBar position="static">
+      <AppBar className="navbar" position="static">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Typography
@@ -92,7 +92,7 @@ const Navbar = (props) => {
               component="div"
               sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
             >
-              LOGO
+           <a href='/'> <img height="50px" width="50px" src="https://upload.wikimedia.org/wikipedia/commons/1/1e/RPC-JP_Logo.png" /></a>
             </Typography>
 
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -137,7 +137,7 @@ const Navbar = (props) => {
               component="div"
               sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
             >
-              LOGO
+              <a href='/'> <img height="50px" width="50px" src="https://upload.wikimedia.org/wikipedia/commons/1/1e/RPC-JP_Logo.png" /></a>
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
               {pages.map((page) => (

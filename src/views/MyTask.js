@@ -6,7 +6,6 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import Home from './Home'
 import TaskTable from '../components/TaskTable/TaskTable';
 
 function TabPanel(props) {
@@ -45,12 +44,12 @@ function a11yProps(index) {
 export default function MyTask() {
 
 const tabs = [
-    {id:1,label:"All Tasks",component:<TaskTable status="all" />},
-    {id:2,label:"Posted Task",component:<TaskTable status="posted" />},
-    {id:3,label:"Booking Request",component:<TaskTable status="requested" />},
-    {id:3,label:"Tasks Assigned",component:<TaskTable status="assigned" />},
-    {id:3,label:"Pending Offers",component:<TaskTable status="pending" />},
-    {id:3,label:"Task Completed",component:<TaskTable status="completed" />},
+    {id:1,label:"All Tasks",component:<TaskTable status="All" />},
+    {id:2,label:"Posted Task",component:<TaskTable status="Posted" />},
+    {id:3,label:"Booking Request",component:<TaskTable status="Requested" />},
+    {id:3,label:"Tasks Assigned",component:<TaskTable status="Assigned" />},
+    {id:3,label:"Pending Offers",component:<TaskTable status="Pending" />},
+    {id:3,label:"Task Completed",component:<TaskTable status="Completed" />},
 ]
 
   const theme = useTheme();

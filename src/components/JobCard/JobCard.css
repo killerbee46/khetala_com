@@ -1,0 +1,11 @@
+.job-title{
+    font-size: 20px;
+    font-weight: 600;
+}
+.job-desc{
+    color: gray;
+    font-weight: 550;
+}
+.job-price{
+    font-weight: 550;
+}

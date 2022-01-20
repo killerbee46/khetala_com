@@ -6,7 +6,6 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
@@ -16,6 +15,8 @@ import './Navbar.css'
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
+import Container from '../Container/Container';
+import CustomButton from '../Button/Button';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -59,10 +60,55 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-const pages = [<Link to='/'>Home</Link>, <Link to='/'>About Us</Link>, <Link to='/my_task'>My Tasklist</Link>, <Link to='/'>Contact Us</Link>];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = [<Link to='/post_task'><CustomButton>Post a task</CustomButton></Link>, <Link to='/browse_task'>Browse Task</Link>, <Link to='/my_task'>My Tasks</Link>];
+const settings = ['Profile', 'Logout'];
 
 const Navbar = (props) => {
+
+  const isLoggedIn = Boolean(false)
+
+  function User() {
+    if (isLoggedIn) {
+      return (
+        <Box sx={{ flexGrow: 0 }}>
+          <Tooltip title="Open settings">
+            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+              <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+            </IconButton>
+          </Tooltip>
+          <Menu
+            sx={{ mt: '45px' }}
+            id="menu-appbar"
+            anchorEl={anchorElUser}
+            anchorOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
+            }}
+            open={Boolean(anchorElUser)}
+            onClose={handleCloseUserMenu}
+          >
+            {settings.map((setting) => (
+              <MenuItem key={setting} onClick={handleCloseNavMenu}>
+                <Typography textAlign="center">{setting}</Typography>
+              </MenuItem>
+            ))}
+          </Menu>
+        </Box>
+      )
+    }
+    else {
+      return <Box sx={{ flexGrow: 0 }}>
+        <a href="/login"><CustomButton>How it works?</CustomButton></a>
+      </Box>
+    }
+  }
+
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -84,7 +130,7 @@ const Navbar = (props) => {
   return (
     <div>
       <AppBar className="navbar" position="static">
-        <Container maxWidth="xl">
+        <Container>
           <Toolbar disableGutters>
             <Typography
               variant="h6"
@@ -92,7 +138,7 @@ const Navbar = (props) => {
               component="div"
               sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
             >
-           <a href='/'> <img height="50px" width="50px" src="https://upload.wikimedia.org/wikipedia/commons/1/1e/RPC-JP_Logo.png" /></a>
+              <a href='/'> <img height="50px" width="50px" src="https://upload.wikimedia.org/wikipedia/commons/1/1e/RPC-JP_Logo.png" /></a>
             </Typography>
 
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -161,35 +207,8 @@ const Navbar = (props) => {
               />
             </Search>
 
-            <Box sx={{ flexGrow: 0 }}>
-              <Tooltip title="Open settings">
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-                </IconButton>
-              </Tooltip>
-              <Menu
-                sx={{ mt: '45px' }}
-                id="menu-appbar"
-                anchorEl={anchorElUser}
-                anchorOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                open={Boolean(anchorElUser)}
-                onClose={handleCloseUserMenu}
-              >
-                {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{setting}</Typography>
-                  </MenuItem>
-                ))}
-              </Menu>
-            </Box>
+            <User />
+
           </Toolbar>
         </Container>
       </AppBar>

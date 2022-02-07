@@ -1,11 +1,11 @@
-import { Grid } from "@mui/material";
+import { Col, Row } from "antd"
 
-export default function Container(props){
+export const Container = (props) => {
     return(
-        <Grid justifyContent='center' container>
-            <Grid item lg={9}>
+        <Row justify="center">
+            <Col lg={20} md={22} xs={24}>
                 {props.children}
-            </Grid>
-        </Grid>
+            </Col>
+        </Row>
     )
 }

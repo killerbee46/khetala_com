@@ -9,3 +9,5 @@ export const Container = (props) => {
         </Row>
     )
 }
+
+export default Container

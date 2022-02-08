@@ -8,7 +8,7 @@ import { useState } from "react";
 import { ProfileDropdown } from "../ProfileDropdown/ProfileDropdown";
 
 export const Navbar = () => {
-    const [isLoggedIn, setLogged] = useState(true)
+    const [isLoggedIn, setLogged] = useState(false)
     return (
         <Content className="shadow-bottom">
             <Container>

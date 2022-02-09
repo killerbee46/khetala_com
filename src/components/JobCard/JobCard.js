@@ -1,7 +1,6 @@
 import { Card, Image, Typography } from "antd"
 import { Link } from "react-router-dom"
 import BidButton from "../Button/BidButton"
-import ButtonCustom from "../Button/ButtonCustom"
 
 export const JobCard = () => {
     return (
@@ -9,7 +8,7 @@ export const JobCard = () => {
             cover={<Image preview={false}
                 src="https://www.peoplesreview.com.np/wp-content/uploads/2021/05/file-20191203-66986-im7o5.jpg" />
             }
-            className="job_card">
+            className="job_card shadow--around">
 
                 <Typography.Title level={3}>
                     Job Title: Doctoring

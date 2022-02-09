@@ -14,7 +14,7 @@ export const Navbar = () => {
             <Container>
             <Menu mode="horizontal" className="navbar">
                 <div>
-                <Link to="/login">
+                <Link to="/">
                 <Menu.Item className="menu-item">
                     {/* <Logo /> */}
                     <Typography.Title>H</Typography.Title>

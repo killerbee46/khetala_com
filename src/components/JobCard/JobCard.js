@@ -6,11 +6,11 @@ export const JobCard = () => {
     return (
         <Card
             cover={<Image preview={false}
-                src="https://www.peoplesreview.com.np/wp-content/uploads/2021/05/file-20191203-66986-im7o5.jpg" />
+                src="https://www.desktopbackground.org/download/1366x768/2012/12/31/507497_nurse-computer-wallpapers-desktop-backgrounds_1920x1200_h.jpg" />
             }
             className="job_card shadow--around">
 
-                <Typography.Title level={3}>
+                <Typography.Title level={4}>
                     Job Title: Doctoring
                 </Typography.Title>
                 <Typography.Title level={5}>

@@ -72,6 +72,9 @@ code {
 .text--black{
   color: black !important;
 }
+.text--white{
+  color: white !important;
+}
 .text--bigger{
   font-size:18px;
 }
@@ -82,4 +85,7 @@ code {
 /* background */
 .bg--gray{
   background-color: rgba(160, 159, 159, 0.432) !important;
+}
+.bg--black{
+  background-color: rgb(31, 31, 31) !important;
 }

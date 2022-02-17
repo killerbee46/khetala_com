@@ -1,0 +1,8 @@
+.banner_content{
+    position: absolute;
+    top: 33%;
+    left: 200px;
+}
+.banner__container{
+    position: relative;
+}

@@ -6,9 +6,10 @@ import './Navbar.css'
 import ButtonCustom from '../Button/ButtonCustom'
 import { useState } from "react";
 import { ProfileDropdown } from "../ProfileDropdown/ProfileDropdown";
+import { Logo } from "../Logo/Logo";
 
 export const Navbar = () => {
-    const [isLoggedIn, setLogged] = useState(false)
+    const [isLoggedIn, setLoggedIn] = useState(false)
     return (
         <Content className="shadow-bottom">
             <Container>
@@ -16,8 +17,7 @@ export const Navbar = () => {
                 <div>
                 <Link to="/">
                 <Menu.Item className="menu-item">
-                    {/* <Logo /> */}
-                    <Typography.Title>H</Typography.Title>
+                    <Logo />
                 </Menu.Item>
                 </Link>
                 </div>
